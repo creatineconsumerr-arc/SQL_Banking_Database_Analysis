@@ -14,6 +14,7 @@ CREATE TABLE Accounts (
     AccountType VARCHAR(20),
     Balance DECIMAL(10,2),
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID) );
+    
     CREATE TABLE Transactions (
     TransactionID INT PRIMARY KEY,
     AccountID INT,
@@ -21,8 +22,10 @@ CREATE TABLE Accounts (
     Amount DECIMAL(10,2),
     TransactionType VARCHAR(20),
     FOREIGN KEY (AccountID) REFERENCES Accounts(AccountID) );
+    
     SHOW DATABASES ;
 DESCRIBE customers ;
+
 CREATE TABLE Branches (
 	BranchID INT PRIMARY KEY,
     BranchName VARCHAR(100),
@@ -46,6 +49,17 @@ CREATE TABLE Loans (
     FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
 );
 describe BankingDB ;
+use BankingDB ;
+describe Customers ;
+ALTER TABLE Customers
+ADD DateOfBirth DATE;
+desc CUSTOMERS ;
+
+
+
+
+
+
 
 
  
